@@ -20,6 +20,7 @@ class JustoAdapter (private val mListProfiles: ArrayList<Results>) : RecyclerVie
     override fun getItemCount(): Int = mListProfiles.size
 
     fun updateList(mList : List<Results>) {
+        mListProfiles.removeAll(mList)
         mListProfiles.addAll(mList)
     }
 

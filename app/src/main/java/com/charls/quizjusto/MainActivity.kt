@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         createTable()
         getProfiles()
+        refeshList()
     }
 
     fun getProfiles(){
@@ -41,6 +42,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    fun refeshList(){
+        mSwipeListRefresh.setOnRefreshListener {
+            getProfiles()
+            mSwipeListRefresh.isRefreshing = false
+        }
     }
 
     fun populateProfiles(mJustoProfiles : JustoProfileModel){
