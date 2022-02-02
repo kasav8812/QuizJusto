@@ -1,6 +1,5 @@
 package com.charls.quizjusto.JustoModule
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,10 +28,10 @@ class JustoAdapter (private val mListProfiles: ArrayList<Results>) : RecyclerVie
             Glide.with(itemView.mIdProfileImageView.context)
                 .load(profile.picture.large)
                 .into(itemView.mIdProfileImageView)
-            itemView.mNameTextView.text = profile.name.first
+            itemView.mNameTextView.text = profile.name.title + " " + profile.name.first + " " + profile.name.last
             itemView.mEmailTextView.text = profile.email
-            itemView.mStreetTextview.text = profile.location.street.name
-            itemView.mStateTextView.text = profile.location.state
+            itemView.mStreetTextview.text = profile.location.street.name + " " + profile.location.street.number
+            itemView.mStateTextView.text = profile.location.state + ", " + profile.location.city
             itemView.mCountryTextView.text = profile.location.country
             itemView.mPostcodeTextView.text = profile.location.postcode
             itemView.mCoordinatesTextView.text = profile.location.coordinates.latitude
